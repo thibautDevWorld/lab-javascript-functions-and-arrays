@@ -1,24 +1,60 @@
 // Iteration #1: Find the maximum
-function maxOfTwoNumbers() {}
+function maxOfTwoNumbers(num1, num2) {
+  if(num1 > num2) {return num1}
+  else{return num2}
+}
 
 
 
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
-function findLongestWord() {}
+function findLongestWord(arr) {
+  if(arr.length === 0) return null;
+
+  let longestWord = '';
+    arr.forEach(elm => {elm.length > longestWord.length ? longestWord = elm : elm})
+  return longestWord;
+}
 
 
 
 // Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-function sumNumbers() {}
+function sumNumbers(arr) {
+  let sum = 0;
+  arr.forEach(elm => sum += elm)
+  return sum
+}
 
 
 
 // Iteration #3.1 Bonus:
-function sum() {}
+function sum(arr) {
+  let sum = 0;
+  arr.forEach(elm => {
+    if(typeof elm === "number") {
+      sum += elm
+    }
+    else if(typeof elm === "string") {
+    	sum += elm.length
+    }
+    else if (typeof elm === "boolean" && elm === true ) {
+       sum += 4;
+    }
+    else if (typeof elm === "boolean" && elm === false) {
+      sum += 5
+    }
+    else if (typeof elm === "object") {
+      throw 'data type is not correct'
+    }
+  })
+  return sum
+}
+              
+              
+sum([1, 3, true, "str", false])
 
 
 
@@ -26,13 +62,23 @@ function sum() {}
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-function averageNumbers() {}
+function averageNumbers(arr) {
+  if(arr.length === 0) return null;
+  let result = sum(arr);
+  let average = result / arr.length
+  return average
+}
 
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
-function averageWordLength() { }
+function averageWordLength(arr) {
+  if(arr.length === 0) return null;
+  let result = sum(arr);
+  let average = result / arr.length
+  return average
+ }
 
 // Bonus - Iteration #4.1
 function avg() {}
