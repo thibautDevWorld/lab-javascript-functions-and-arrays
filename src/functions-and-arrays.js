@@ -81,7 +81,12 @@ function averageWordLength(arr) {
  }
 
 // Bonus - Iteration #4.1
-function avg() {}
+function avg(arr) {
+  if(arr.length === 0) return null;
+  let result = sum(arr);
+  let average = result / arr.length
+  return average
+}
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
@@ -98,14 +103,26 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(arr) {
+  if(!arr.length) return null 
+  return arr.filter((elm, idx) => arr.indexOf(elm) === idx)
+}
 
 
 
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist() {}
+function doesWordExist(arr, word) {
+  if(!arr.length) return null;
+
+  if(arr.includes(word)) {
+    return true
+  }
+  else {
+    return false
+  }
+}
 
 
 
@@ -124,7 +141,13 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() {}
+function howManyTimes(arr, word) {
+  let count = 0;
+  arr.forEach(elm => {
+    if(elm === word) count ++
+  })
+  return count;
+}
 
 
 
